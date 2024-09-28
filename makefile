@@ -1,17 +1,17 @@
-# Used by `image`, `push` & `deploy` targets, override as required
-IMAGE_REG ?= docker.io
-IMAGE_REPO ?= sevenajay/python-system-monitoring
+# Utilisé par les cibles `image`, `push` et `deploy`, remplacez si nécessaire
+IMAGE_REG ?= 192.168.222.60:8083
+IMAGE_REPO ?= 192.168.222.60:8083/python-system-monitoring
 IMAGE_TAG ?= latest
 
-# Used by `deploy` target, sets Azure webap defaults, override as required
+# Utilisé par la cible « deploy », définit les valeurs par défaut d'Azure WebAP, remplacez-les si nécessaire
 AZURE_RES_GROUP ?= temp-demoapps
 AZURE_REGION ?= uksouth
 AZURE_SITE_NAME ?= pythonapp-$(shell git rev-parse --short HEAD)
 
-# Used by `test-api` target
+# Utilisé par la cible `test-api`
 TEST_HOST ?= localhost:5000
 
-# Don't change
+# Ne pas changer
 SRC_DIR := src
 
 .PHONY: help lint lint-fix image push run deploy undeploy clean test-api .EXPORT_ALL_VARIABLES
