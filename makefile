@@ -1,7 +1,7 @@
 # Utilisé par les cibles `image`, `push` et `deploy`, remplacez si nécessaire
 IMAGE_REG ?= 192.168.222.60:8083
-IMAGE_REPO ?= 192.168.222.60:8083/python-system-monitoring
-IMAGE_TAG ?= latest
+IMAGE_REPO ?= python-system-monitoring
+IMAGE_TAG ?= ${BUILD_NUMBER}
 
 # Utilisé par la cible « deploy », définit les valeurs par défaut d'Azure WebAP, remplacez-les si nécessaire
 AZURE_RES_GROUP ?= temp-demoapps
